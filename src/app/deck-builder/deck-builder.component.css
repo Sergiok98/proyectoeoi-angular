@@ -1,7 +1,35 @@
 .cuadroresutado{
   padding: 0px;
-  width: 350px;
-  height: 500px;
+  width: 370px;
+  height: 600px;
   overflow: auto;
   border: 1px solid rgb(0, 0, 0);
+}
+
+.tablecard {
+  text-align: end !important;
+  width: 100%;
+}
+
+.tablecard-title {
+  text-align: end !important;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.imgcardsm {
+  height: 16px;
+  width: 16px;
+}
+
+.card-format {
+  max-width: 500px;
+  width: 350px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 0px;
+  font-size: 14px;
+  display: none;
+  display: block
 }

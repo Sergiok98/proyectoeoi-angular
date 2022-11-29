@@ -7,17 +7,38 @@
   </div>
   <div class="offcanvas-body">
     <div class="cuadroresutado">
-      <div *ngFor="let carta of cartas" class="card mb-3" style="max-width: 540px;">
+      <div *ngFor="let carta of cartas" class="card-format" id="card-f">
         <div class="row g-0">
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
-          </div>
           <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{{carta.cardname}}</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div style="padding: 10px;">
+              <table>
+                <tr>
+                  <td colspan="2" class="tablecard-title">{{carta.cardname}}</td>
+                </tr>
+                <tr>
+                  <td rowspan="3">
+                    <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                      <button type="button" class="btn btn-primary btn-sm">Main</button>
+                      <button type="button" class="btn btn-primary btn-sm">Extra</button>
+                      <button type="button" class="btn btn-primary btn-sm">Side</button>
+                    </div>
+
+                  </td>
+                  <td class="tablecard"><img src="/img/Luz.webp" class="imgcardsm">Atribute: LIGHT
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tablecard"><img src="img/dragon.webp" class="imgcardsm">Type: Dragon</td>
+                </tr>
+                <tr>
+                  <td class="tablecard"><img src="img/Star.webp" class="imgcardsm">Level/Rank: 8</td>
+                </tr>
+
+              </table>
             </div>
+          </div>
+          <div class="col-md-4">
+            <img src="assets/Card-Images/{{carta.idcarta}}.png" class="img-fluid" alt="...">
           </div>
         </div>
       </div>
