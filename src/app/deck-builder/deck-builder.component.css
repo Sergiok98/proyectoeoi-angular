@@ -1,0 +1,7 @@
+.cuadroresutado{
+  padding: 0px;
+  width: 350px;
+  height: 500px;
+  overflow: auto;
+  border: 1px solid rgb(0, 0, 0);
+}
