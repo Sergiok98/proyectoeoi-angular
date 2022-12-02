@@ -14,8 +14,6 @@ export class DeckBuilderComponent implements OnInit {
   seleccionadas:any = [];
   seleccionadasExtra:any = [];
   seleccionadasSide:any = [];
-  popperclick = NgxPopperjsTriggers.hover;
-  popperPlace = NgxPopperjsPlacements.AUTO;
   constructor(private backend: BackendService) { }
 
   ngOnInit(): void {
@@ -59,6 +57,10 @@ export class DeckBuilderComponent implements OnInit {
     this.seleccionadasSide.splice(i, 1);
   }
 
+  borrarLocal(){
+    localStorage.removeItem("seleccionadas");
+    window.location.reload();
+  }
   /*enviar(i:number) {
     console.log(this.seleccionadas[i]);
   }*/
