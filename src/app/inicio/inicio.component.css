@@ -1,0 +1,25 @@
+.fondo {
+  height: 800px; background-size:cover; width:auto;
+  background-image: url("/assets/iconos/Baner.jpg");
+  background-position:50% 50%;
+  background-attachment: fixed;
+
+}
+@media only screen and (max-device-width: 1366px) {
+  .fondo {
+    background-attachment: scroll;
+  }
+}
+
+.fondo2 {
+  height: 200px; background-size:cover; width:auto;
+  background-image: url("/assets/iconos/Baner.jpg");
+  background-position:50% 50%;
+  background-attachment: fixed;
+
+}
+@media only screen and (max-device-width: 1366px) {
+  .fondo2 {
+    background-attachment: scroll;
+  }
+}

@@ -1,13 +1,228 @@
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+<div class="container">
+  <!-- Añadir-->
 
-<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <button class="btn btn-primary mt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+    aria-controls="offcanvasScrolling">Lista de cartas</button>
+
+  <div class="container text-center mt-3">
+    <div class="row">
+      <div class="col">
+        <h5 class="rounded border border-dark">Main</h5>
+        <ol class="list-group list-group-numbered">
+          <li *ngFor="let carta of seleccionadas;  index as i"
+            class="list-group-item d-flex rounded border border-dark">
+            <div class="ms-2 me-auto d-flex">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0">
+                  <img src="assets/Card-Images/{{carta.idcarta}}.png" style="width: 50px;" alt="carta imagen">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <div class="fw-bold p-1 w-100">{{carta.cardname}}</div>
+                  <div class="p-1">{{carta.cardtype}}</div>
+              <div class="btn-group d-flex justify-content-start" role="group">
+                <button (click)="deleteCarta(i)" type="button" class="btn btn-primary btn-sm">Borrar</button>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                            [attr.data-bs-target]="'#m'+i">
+                            Info <i class="bi bi-info-square"></i>
+                          </button>
+                <!--<button (click)="enviar(i)"></button>-->
+                </div>
+              </div>
+
+              </div>
+              <!--Modal-->
+              <div class="modal fade" [attr.id]="'m' + i" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card mb-3 rounded-0" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/Card-Images/{{carta.idcarta}}.png" class="img-fluid"
+                            alt="carta imagen">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">{{carta.cardname}}</h5>
+                            <table>
+                              <tr>
+                                <td>ATK/{{carta.atk}}</td>
+                                <td>DEF/{{carta.def}}</td>
+                              </tr>
+                              <td>Atribute:{{carta.attribute}}</td>
+                              <td>Type:{{carta.types}}</td>
+                              <tr>
+                                <td>Level/Rank:{{carta.nivel}}</td>
+                              </tr>
+                            </table>
+                            <p class="card-text"><small>{{carta.description}}</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="col">
+        <h5 class="rounded border border-success">Extra</h5>
+        <ol class="list-group list-group-numbered">
+          <li *ngFor="let carta of seleccionadasExtra;  index as i"
+            class="list-group-item d-flex rounded border border-success">
+            <div class="ms-2 me-auto d-flex">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0">
+                  <img src="assets/Card-Images/{{carta.idcarta}}.png" style="width: 50px;" alt="carta imagen">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <div class="fw-bold p-1 w-100">{{carta.cardname}}</div>
+                  <div class="p-1">{{carta.cardtype}}</div>
+              <div class="btn-group d-flex justify-content-start" role="group">
+                <button (click)="deleteCartaExtra(i)" type="button" class="btn btn-primary btn-sm">Borrar</button>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                            [attr.data-bs-target]="'#m'+i">
+                            Info <i class="bi bi-info-square"></i>
+                          </button>
+                </div>
+              </div>
+
+              </div>
+              <!--Modal-->
+              <div class="modal fade" [attr.id]="'m' + i" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card mb-3 rounded-0" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/Card-Images/{{carta.idcarta}}.png" class="img-fluid"
+                            alt="carta imagen">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">{{carta.cardname}}</h5>
+                            <table>
+                              <tr>
+                                <td>ATK/{{carta.atk}}</td>
+                                <td>DEF/{{carta.def}}</td>
+                              </tr>
+                              <td>Atribute:{{carta.attribute}}</td>
+                              <td>Type:{{carta.types}}</td>
+                              <tr>
+                                <td>Level/Rank:{{carta.nivel}}</td>
+                              </tr>
+                            </table>
+                            <p class="card-text"><small>{{carta.description}}</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="col">
+        <h5 class="rounded border border-warning">Side</h5>
+        <ol class="list-group list-group-numbered">
+          <li *ngFor="let carta of seleccionadasSide;  index as i"
+            class="list-group-item d-flex border border-warning">
+            <div class="ms-2 me-auto d-flex">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0">
+                  <img src="assets/Card-Images/{{carta.idcarta}}.png" style="width: 50px;" alt="carta imagen">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <div class="fw-bold p-1 w-100">{{carta.cardname}}</div>
+                  <div class="p-1">{{carta.cardtype}}</div>
+              <div class="btn-group d-flex justify-content-start" role="group">
+                <button (click)="deleteCartaSide(i)" type="button" class="btn btn-primary btn-sm">Borrar</button>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                            [attr.data-bs-target]="'#m'+i">
+                            Info <i class="bi bi-info-square"></i>
+                          </button>
+                </div>
+              </div>
+
+              </div>
+              <!--Modal-->
+              <div class="modal fade" [attr.id]="'m' + i" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card mb-3 rounded-0" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/Card-Images/{{carta.idcarta}}.png" class="img-fluid"
+                            alt="carta imagen">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">{{carta.cardname}}</h5>
+                            <table>
+                              <tr>
+                                <td>ATK/{{carta.atk}}</td>
+                                <td>DEF/{{carta.def}}</td>
+                              </tr>
+                              <td>Atribute:{{carta.attribute}}</td>
+                              <td>Type:{{carta.types}}</td>
+                              <tr>
+                                <td>Level/Rank:{{carta.nivel}}</td>
+                              </tr>
+                            </table>
+                            <p class="card-text"><small>{{carta.description}}</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--Seleccionador de cartas-->
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+  id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Cartas</h5>
+    <label for="filtro" class="form-label">Nombre:</label>
+    <input type="text" placeholder="Filtrar" [(ngModel)]="filtro" id="filtro" class="form-control">
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
     <div class="cuadroresutado">
-      <div *ngFor="let carta of cartas" class="card-format" id="card-f">
+      <div *ngFor="let carta of cartas | filtroCartas:filtro" class="card-format" id="card-f">
         <div class="row g-0">
           <div class="col-md-8">
             <div style="padding: 10px;">
@@ -18,30 +233,66 @@
                 <tr>
                   <td rowspan="3">
                     <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-                      <button type="button" class="btn btn-primary btn-sm">Main</button>
-                      <button type="button" class="btn btn-primary btn-sm">Extra</button>
-                      <button type="button" class="btn btn-primary btn-sm">Side</button>
+                      <button (click)="add(carta)" type="button" class="btn btn-primary btn-sm">Main</button>
+                      <button (click)="addExtra(carta)" type="button" class="btn btn-primary btn-sm">Extra</button>
+                      <button (click)="addSide(carta)" type="button" class="btn btn-primary btn-sm">Side</button>
                     </div>
 
                   </td>
-                  <td class="tablecard"><img src="/img/Luz.webp" class="imgcardsm">Atribute: LIGHT
+                  <td class="tablecard"><img src="/img/Luz.webp" class="imgcardsm">{{carta.cardtype}}
                   </td>
                 </tr>
                 <tr>
-                  <td class="tablecard"><img src="img/dragon.webp" class="imgcardsm">Type: Dragon</td>
+                  <td class="tablecard"><img src="img/dragon.webp" class="imgcardsm">{{carta.attribute}}</td>
                 </tr>
                 <tr>
-                  <td class="tablecard"><img src="img/Star.webp" class="imgcardsm">Level/Rank: 8</td>
+                  <td class="tablecard"><img src="img/Star.webp" class="imgcardsm">{{carta.types}}</td>
                 </tr>
 
               </table>
             </div>
           </div>
           <div class="col-md-4">
-            <img src="assets/Card-Images/{{carta.idcarta}}.png" class="img-fluid" alt="...">
+            <img [ngbPopover]="popContent" placement="start" [ngbPopover]="popContent"
+              src="assets/Card-Images/{{carta.idcarta}}.png" class="img-fluid" alt="...">
+
+            <ng-template #popContent>
+              <div class="modal-body">
+                <div class="card mb-3 rounded-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="assets/Card-Images/{{carta.idcarta}}.png" class="img-fluid" alt="carta imagen">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{carta.cardname}}</h5>
+                        <table>
+                          <tr>
+                            <td>ATK/{{carta.atk}}</td>
+                            <td>DEF/{{carta.def}}</td>
+                          </tr>
+                          <td>Atribute:{{carta.attribute}}</td>
+                          <td>Type:{{carta.types}}</td>
+                          <tr>
+                            <td *ngIf="carta.nivel !=-1"> <img src="assets/iconos/Star.webp" style="height: 16px; width: 16px;">/Rank:{{carta.nivel}}</td>
+                          </tr>
+                        </table>
+                        <p class="card-text"><small>{{carta.description}}</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <nav class="mt-2">
+    <ul class="pagination pagination-sm">
+      <li *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" class="page-item"><button class="page-link"
+          (click)="paginar(i)">{{i}}</button></li>
+    </ul>
+  </nav>
 </div>
