@@ -12,11 +12,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './nav/nav.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 const APP_ROUTES: Route[] =[
   {path: '', component: InicioComponent},
   {path: 'inicio', component: InicioComponent},
-  {path: 'deckbuilder', component: DeckBuilderComponent}
+  {path: 'deckbuilder', component: DeckBuilderComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
@@ -27,6 +29,7 @@ const APP_ROUTES: Route[] =[
     NavComponent,
     InicioComponent,
     FooterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+.fondo {
+  height: 330px; background-size:cover; width: auto;
+  background-image: url("/assets/iconos/Exodia.jpg");
+  background-position:50% 50%;
+  background-attachment: fixed;
+
+}
+@media only screen and (max-device-width: 1366px) {
+  .fondo {
+    background-attachment: scroll;
+  }
+}
+
+.fondo2 {
+  height: 300px; background-size:cover; width:auto;
+  background-image: url("/assets/iconos/Exodia.jpg");
+  background-position:50% 50%;
+  background-attachment: fixed;
+
+}
+@media only screen and (max-device-width: 1366px) {
+  .fondo2 {
+    background-attachment: scroll;
+  }
+}
+.fondo3 {
+  background-size:cover; width: auto;
+  background-image: url("/assets/iconos/Exodia.jpg");
+  background-position:50% 50%;
+  background-attachment: fixed;
+
+}

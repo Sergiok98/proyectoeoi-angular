@@ -1,5 +1,5 @@
 .fondo {
-  height: 800px; background-size:cover; width:auto;
+  height: 400px; background-size:cover; width: auto;
   background-image: url("/assets/iconos/Baner.jpg");
   background-position:50% 50%;
   background-attachment: fixed;
@@ -12,7 +12,7 @@
 }
 
 .fondo2 {
-  height: 200px; background-size:cover; width:auto;
+  height: 300px; background-size:cover; width:auto;
   background-image: url("/assets/iconos/Baner.jpg");
   background-position:50% 50%;
   background-attachment: fixed;
@@ -22,4 +22,25 @@
   .fondo2 {
     background-attachment: scroll;
   }
+}
+
+.baner1 {
+  height:300px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  background-image: url("/assets/iconos/juego.jpg");
+}
+
+.ilink{
+  font-style: normal;
+}
+.ajugar{
+  text-decoration: none;
+  color: black;
+  font-size: 50px;
+}
+
+.topbaner{
+  background-color: white;
+  height: 50px;
 }
